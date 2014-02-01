@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p class="meta">{{ page.date | date_to_string }}</p>
-
-<div class="post">
-{{ content }}
-</div>
+<h2><a href="{{page.url}}">{{page.title}}</a></h2>
+<p class="lead">by Diego</p>
+<hr>
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on {{page.date || date_to_string}}</p>
+<hr>
+<div>{{content}}</div>
+<hr>
