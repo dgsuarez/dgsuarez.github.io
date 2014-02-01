@@ -18,7 +18,7 @@ solution however will be (at least initially) to brute-force it by generating
 all the possible states the puzzle can be in and selecting a route from the
 initial state of the puzzle to the solution state.
 
-Let's get to it then. As an example we'll be using the puzzle we can find in
+Let's get to it then. As an example we'll be using a puzzle we can find in
 [Still Life](http://en.wikipedia.org/wiki/Still_Life_%28video_game%29). The
 puzzle starts looking like
 [this](http://www.adventurelantern.com/Walkthroughs/stillLife/18.jpg) and we
