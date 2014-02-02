@@ -67,7 +67,7 @@ it is:
 (defn free-cell [puzzle]
   (first (for [[x row] (map-indexed vector puzzle)
                y (range (count row))
-               :when (= 0 (get-cell puzzle [x y]))]
+               :when (= 0 (get-in puzzle [x y]))]
            [x y])))
 
 (defn possible-next-steps [puzzle]
@@ -76,8 +76,9 @@ it is:
         new-coords (map (fn [[dx dy]] 
                           [(+ x dx) (+ y dy)]) moves)]
     (for [[nx ny] new-coords 
-          :when (get-cell puzzle [nx ny])] 
+          :when (get-in puzzle [nx ny])] 
       (swap-cells puzzle [x y] [nx ny]))))
+
 ```
 
 `free-cell` just returns the coordinates for the cell with value 0 (so, the
