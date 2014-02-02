@@ -37,7 +37,8 @@ a breadth-first approach.
 
 Traditional implementations of breadth-first search use a queue to store the
 nodes to explore, however, through the magic of lazy sequences we will be able
-to create a simpler solution. In fact, here it is in under 20 lines of code:
+to create a simpler solution. In fact, it fits in under 20 lines of code,
+let's explore it one function at a time.
 
 ~~~clojure
 (defn all-next-for-path [path seen get-next-states]
@@ -45,44 +46,45 @@ to create a simpler solution. In fact, here it is in under 20 lines of code:
     (do 
       (swap! seen conj s)
       (conj path s))))
+~~~
+
+`all-next-for-path` takes a path (as a list of states) and gets all the
+possible steps from it. So if we can move 3 tiles from the last state in the
+path, this will generate 3 new paths by adding each tile move to the path. To
+avoid loops we are also passing `seen`, which is a set of all the states we
+have already explored. We are cheating a bit by using an `atom` to hold the
+set of seen states. Atoms in clojure allow us to work with mutable state, and
+we are changing it as we iterate. If we hadn't used it the simple `map`
+semantics of the function would have turned into a more cumbersome `reduce`
+over two collections, the seen set and the paths.
+
+~~~clojure
 
 (defn next-level [paths seen get-next-states]
   (mapcat #(all-next-for-path % seen get-next-states) paths))
 
 (defn all-paths [paths seen get-next-states]
   (lazy-cat paths (all-paths (next-level paths seen get-next-states) seen get-next-states)))
-            
+~~~
+
+`next-level` uses `all-next-for-path` to generate all the possible n+1 length
+paths from the list of paths it receives. `all-paths` can then recursively
+call itself and use `next-level` to generate **all** the paths from it's
+initial set of paths, one level down at a time. We can do it this way by using
+`lazy-cat`, which returns a lazy collection so that it won't eval the second
+argument until we get there when we are iterating the collection.
+
+~~~clojure
 (defn solve [state solution? get-next-states]
   (let [initial (list (list state))
         seen (atom #{})]
     (reverse (first (filter #(solution? (first %)) (all-paths initial seen get-next-states))))))
 ~~~
 
-Let's look at this code starting from the top. `all-next-for-path` takes
-a path (as a list of states) and gets all the possible steps from it. So if
-we can move 3 tiles from the last state in the path, this will generate 3 new
-paths by adding each tile move to the path. To avoid loops we are also passing
-`seen`, which is a set of all the states we have already explored.
-
-`next-level` uses `all-next-for-path` to generate all the possible n+1 length
-paths from the list of paths it receives. `all-paths` can then recursively
-call itself and use `next-level` to generate **all** the paths from it's
-initial set of paths, one level down at a time. With this collection solving the
-problem is as simple as getting elements from the collection until we find one
-that is a solution. Also, since the collection is sorted by path length, we
-know that the first path that is a solution is also one of the shortest.
-
-I want to highlight a couple of things about this solution. The first one is
-that this kind of solution is only possible because clojure can do lazy
-sequences, `lazy-cat` won't eval its second argument until it exhausts the
-first, so we are safe from stack overflows or infinite loops (that is, if the
-puzzle we provide has a solution).
-
-The second is that we are _cheating_ by using an `atom` to hold the set of
-seen states. Atoms in clojure allow us to work with mutable state, and we are
-changing it as we iterate. If we hadn't used it the simple `map` semantics in
-`all-next-for-path` and `next-level` would have turned into a more cumbersome
-`reduce` over two collections, the seen set and the paths.
+With the collection returned by all-paths solving the problem is as simple as
+getting elements from the collection until we find one that is a solution.
+Also, since the collection is sorted by path length, we know that the first
+path that is a solution is also one of the shortest.
 
 Now we can finally solve the puzzle from Still Life. I won't print it here
 because it's 27 steps long, but it is interesting that in my 6 year old laptop
