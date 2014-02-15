@@ -22,18 +22,18 @@ state, and we can remove vertices to nodes that already have an incoming one,
 removing loops. After these transformations we are left with a tree, which is
 easier to work with.
 
-There are a couple of basic ways to explore a tree, depth or breadth first. 
-In a depth-first search (or backtracking), we'd explore the tree by picking
-a child node, and then a child of the child, and so on, until we can go no
-further, then we backtrack, and pick the next child, repeat, and so on until
-we find the solution or run through the whole tree.  In a breadth-first search, 
-we explore each child node before moving to the grandchildren, and we do this 
-for every _level_ in the tree. 
+There are a couple of basic ways to explore a tree, depth or breadth first.
+In a depth-first search, we'd explore the tree by picking a child node, and
+then a child of the child, and so on, until we can go no further, then we
+backtrack, and pick the next child, repeat, and so on until we find the
+solution or run through the whole tree.  In a breadth-first search, we explore
+each child node before moving to the grandchildren, and we do this for every
+_level_ in the tree. 
 
-Since we know that our solution must lie somewhat close to the initial node (I
-don't think any game designer is so evil to have us make hundreds of moves in
-an optimal solution to solve the sliding puzzle), our best bet is to use
-a breadth-first approach.
+Since we know that our solution must lie somewhat close to the initial node
+(It's unlikely that any game designer would be so evil to have us make
+hundreds of moves to solve the puzzle), our best bet is to use a breadth-first
+approach.
 
 Traditional implementations of breadth-first search use a queue to store the
 nodes to explore, however, through the magic of lazy sequences we will be able
@@ -84,9 +84,14 @@ argument until we get there when we are iterating the collection.
 With the collection returned by all-paths solving the problem is as simple as
 getting elements from the collection until we find one that is a solution.
 Also, since the collection is sorted by path length, we know that the first
-path that is a solution is also one of the shortest.
+path that is a solution also has minimal length.
 
-Now we can finally solve the puzzle from Still Life. I won't print it here
-because it's 27 steps long, but it is interesting that in my 6 year old laptop
-it takes almost half a minute to come up with it, not great by any means, but
-good enough, at least for now.
+Now we can finally solve the puzzle from Still Life:
+
+~~~clojure
+(bfser/solve initial #{solution} possible-next-states)
+~~~
+
+I won't print the solution here because it's 27 steps long, but it is
+interesting that in my 6-year old laptop it takes almost half a minute to come
+up with it, not great by any means, but good enough for now.

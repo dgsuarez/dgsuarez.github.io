@@ -16,8 +16,8 @@ action](https://www.youtube.com/watch?v=I1kB0I5cHzI).
 
 Our first approach will be to use our breadth-first search implementation, so
 we'll need the same functions we coded for the [sliding tiles
-puzzle]({%post_url 2014-01-22-the-sliding-tiles-puzzle%}). Again, checking
-we need both a initial and a solution state:
+puzzle]({%post_url 2014-01-22-the-sliding-tiles-puzzle%}). Again, we need both
+a initial and a solution state:
 
 ~~~clojure
 (def start [[0 0 0 0 0 0 0 0 0]
