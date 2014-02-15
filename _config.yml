@@ -1,3 +1,11 @@
-name: Control of inversion
+name: Diego Guerra
 markdown: redcarpet
 pygments: true
+
+githubs:
+  Thermometer: https://github.com/dgsuarez/thermometer
+  HMatcher: https://github.com/dgsuarez/hmatcher
+  Qkcast: https://github.com/dgsuarez/qkcast
+  Planning Brisca: https://github.com/dgsuarez/planning_brisca
+
+
