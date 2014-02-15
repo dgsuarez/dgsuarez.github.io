@@ -26,9 +26,10 @@ a 5%, 20%, 75% split). In fact, most of the times after solving one of those
 problems the main feeling I get is not one of achievement, but of relief about
 being able to go on with the game. 
 
-So, since they are well defined problems, what about creating a program to
-solve them? This way I can just worry about having a clear understanding of
-the problem and let my computer sweat over finding the right solution. That's
+So, since they are well defined problems and I don't seem to get any
+satisfaction by solving them by hand, what about creating a program to do it
+for me? This way I can just worry about having a clear understanding of the
+problem and let my computer sweat over finding the right solution. That's
 exactly what I'll be doing over this series of posts.
 
 In the next post I'll look at solving one of the most common and frustrating
