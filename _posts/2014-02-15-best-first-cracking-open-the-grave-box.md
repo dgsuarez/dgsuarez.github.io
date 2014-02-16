@@ -29,8 +29,9 @@ this:
 * Repeat
 
 I won't go into much more detail about the actual implementation, you can look
-it up in the repo. What's more interesting to me is the scoring function,
-which will determine the success of the algorithm. 
+it up in the [repo](https://github.com/dgsuarez/adventure-puzzle-solver).
+What's more interesting to me is the scoring function, which will determine
+the success of the algorithm. 
 
 Unlike the one-size-fits-all convenience of a simple search algorithm, here
 we'll have to come up with a way of measuring how good a state is for each

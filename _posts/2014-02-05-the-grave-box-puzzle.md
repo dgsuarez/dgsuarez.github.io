@@ -36,7 +36,7 @@ And a way to check if we are in a solution state:
 ~~~
 
 We also need a `possible-next-states` function. Again, I'll be using some
-helper functions that you can look up in the full repo, but the core is pretty
+helper functions that you can look up in the full [repo](https://github.com/dgsuarez/adventure-puzzle-solver), but the core is pretty
 much similar to the one for the sliding puzzle:
 
 ~~~clojure

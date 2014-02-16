@@ -60,7 +60,8 @@ or simply
 ```
 
 Next we need to generate the moves from a state. This isn't hard either, I'll
-be using some helper functions you can see in the full [repo](), but the gist of
+be using some helper functions you can see in the full
+[repo](https://github.com/dgsuarez/adventure-puzzle-solver), but the gist of
 it is:
 
 ```clojure
