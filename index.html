@@ -28,7 +28,7 @@ layout: master
       <h2><a href="http://github.com/dgsuarez">Code</a></h2>
       <ul class="code">
         {% for code in site.githubs limit: 4%}
-        <li><a href="{{ code[1] }}">{{ code[0] }}</a></li>
+        <li><a href="{{ code.url }}">{{ code.name }}</a></li>
         {% endfor %}
         <li>
           <a href="http://github.com/dgsuarez">...more</a>

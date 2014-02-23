@@ -3,9 +3,12 @@ markdown: redcarpet
 pygments: true
 
 githubs:
-  Thermometer: https://github.com/dgsuarez/thermometer
-  HMatcher: https://github.com/dgsuarez/hmatcher
-  Qkcast: https://github.com/dgsuarez/qkcast
-  Planning Brisca: https://github.com/dgsuarez/planning_brisca
-
-
+  - name: Thermometer
+    url: https://github.com/dgsuarez/thermometer
+  - name: HMatcher
+    url: https://github.com/dgsuarez/hmatcher
+  - name: Qkcast
+    url: https://github.com/dgsuarez/qkcast
+  - name: Planning Brisca
+    url: https://github.com/dgsuarez/planning_brisca
+  
