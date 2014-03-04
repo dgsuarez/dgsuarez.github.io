@@ -94,5 +94,5 @@ useful feature.
 up elements by position, or check for element presence?  Having to choose
 probably means that it's better to leave it alone. As for others I can't
 really think of more default types with action semantics clear enough to merit
-a `to_proc` but I'd gladly hear any suggestions.
+a `to_proc`, but I'd gladly hear any suggestions.
 
