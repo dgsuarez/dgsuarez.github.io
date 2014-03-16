@@ -104,7 +104,7 @@ return a list of these new states:
 
 Next up, we need a way of checking for solutions. One way would be to check
 that each piece conforms to the spec, however, since we are ensuring that each
-piece conforms while we are creating it checking for the solution isas
+piece conforms while we are creating it, checking for the solution is as
 simple as ensuring that there are no toppings left on it:
 
 ~~~clojure
