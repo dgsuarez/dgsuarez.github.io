@@ -19,4 +19,12 @@ class Jekyll < Thor
       post.puts "---"
     end
   end
+
+  desc "publish", "publish a draft"
+  def publish(draft_path, date=nil)
+    date ||= Time.now.strftime('%Y-%m-%d')
+    post_path = draft_path.sub(/_drafts\//, "_posts/#{date}-")
+    puts post_path
+    `git mv #{draft_path} #{post_path}`
+  end
 end
