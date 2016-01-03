@@ -56,8 +56,9 @@ Either you know which file has the data you are after, or you need to find it.
 If you know where the data is then all you need to do is `cat`, `tail` or
 `head` it (and yes, it's 99% likely that this starting `cat` useless and could
 be replaced by a parameter to the next command, but it's also helpful to
-understand the flow of the pipeline). If you are really getting fancy you can
-also `curl -L` some URL.
+understand the flow of the pipeline). If the data is gzipped (for example
+rotated log files) `zcat` is your friend. If the data is not local you can get
+fancy with `curl -L URL` or `wget -O - URL`
 
 If not, then you are going to have to `find` it. `find` looks recursively in
 a directory for files that match certain conditions. There are so many flags
@@ -151,3 +152,4 @@ awk '/REMOVE USER/ {sum += $NF} END {print sum}' mylog.log
 
 That's it for now. As I said on the next post we'll explore `xargs`, which
 will open up a new dimension for every step in the processing pipeline
+
