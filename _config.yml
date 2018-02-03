@@ -1,6 +1,6 @@
 name: Diego Guerra
 markdown: redcarpet
-pygments: true
+highlighter: rouge
 
 githubs:
   - name: Thermometer
@@ -11,4 +11,4 @@ githubs:
     url: https://github.com/dgsuarez/qkcast
   - name: Planning Brisca
     url: https://github.com/dgsuarez/planning_brisca
-  
+

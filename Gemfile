@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'thor'
-gem 'stringex'
 gem 'jekyll'
-
+gem 'redcarpet'
+gem 'rouge'
+gem 'stringex'
+gem 'thor'
