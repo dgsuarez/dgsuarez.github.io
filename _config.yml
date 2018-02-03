@@ -1,14 +1,2 @@
 name: Diego Guerra
-markdown: redcarpet
-highlighter: pygments
-
-githubs:
-  - name: Thermometer
-    url: https://github.com/dgsuarez/thermometer
-  - name: HMatcher
-    url: https://github.com/dgsuarez/hmatcher
-  - name: Qkcast
-    url: https://github.com/dgsuarez/qkcast
-  - name: Planning Brisca
-    url: https://github.com/dgsuarez/planning_brisca
-
+highlighter: rouge
