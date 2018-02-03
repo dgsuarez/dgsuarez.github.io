@@ -1,5 +1,4 @@
 ---
-title: Diego Guerra
 layout: master
 ---
 
@@ -9,39 +8,25 @@ layout: master
   </div>
   <div class="row">
     <div class="col-lg-3">
-      <p class="me">
-        <img src="/images/me.jpg" class="img-circle img-responsive" />
+      {% include me.html %}
+    </div>
+    <div class="col-lg-9 main-description">
+      {% include description.html %}
+
+      <p class="projects">
+        If you want to check out some of my projects, Some of my favorites are
+        <a href="https://github.com/dgsuarez/reruby">Reruby</a>, a Ruby
+        refactoring CLI tool, <a href="https://github.com/dgsuarez/similatron">Similatron</a>,
+        a PDF &amp; image comparison engine specially designed for use in tests (also for Ruby), and
+        <a href="https://github.com/dgsuarez/ticard">Ticard</a>, an easy way to work with Trello
+        cards almost anywhere.
       </p>
-    </div>
-    <div class="col-lg-4">
-      <h2><a href="/blog.html">Blog</a></h2>
-      <ul class="posts">
-        {% for post in site.posts limit: 4%}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-        <li>
-          <a href="/archive.html">...more</a>
-        </li>
-      </ul>
-    </div>
-    <div class="col-lg-4">
-      <h2><a href="http://github.com/dgsuarez">Code</a></h2>
-      <ul class="code">
-        {% for code in site.githubs limit: 4%}
-        <li><a href="{{ code.url }}">{{ code.name }}</a></li>
-        {% endfor %}
-        <li>
-          <a href="http://github.com/dgsuarez">...more</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-6 col-md-offset-3">
-      <p>Hi there, I'm Diego Guerra, a Software Engineer from northern Spain
-        working at <a href="http://sweetspotintelligence.com">Sweetspot Intelligence</a>.
-        I like to <a href="http://github.com/dgsuarez">write code</a> and 
-        <a href="/blog.html">write about writing code</a>.
+
+      <p class="projects">
+        Also, over the years some people have found my
+        <a href="https://github.com/dgsuarez/.dotfiles">.dotfiles</a> useful,
+        and you may be interested in a <a href="http://dgsuarez.es/programs_that_understand">metaprogramming comparison</a>
+        between Ruby and Crystal.
       </p>
     </div>
   </div>

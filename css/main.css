@@ -1,13 +1,49 @@
-.post-title h2, .post-title small {
-  display: inline;
+body {
+  font-size: 18px;
+}
+
+.main-description {
+  font-size: 32px;
+}
+
+.projects {
+  font-size: 22px;
+}
+
+h2 small {
+  font-size: 12px;
 }
 
 p.me img {
+  max-width: 220px;
   margin: auto;
 }
 
-.sidebar p {
-  text-align: justify;
+
+.sidebar-content.no-header {
+  margin-top: 65px;
+}
+
+p.contact {
+  text-align: center;
+}
+
+footer p.contact {
+  text-align: left;
+}
+
+
+p.contact svg {
+  max-width: 32px;
+  fill: #eb6864;
+}
+
+p.contact svg:hover, p.contact svg:focus {
+  fill: #e22620;
+}
+
+p.contact a:hover, p.contact a:focus {
+  text-decoration: none;
 }
 
 

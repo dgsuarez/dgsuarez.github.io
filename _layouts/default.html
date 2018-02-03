@@ -3,10 +3,11 @@ layout: master
 ---
 <div class="container">
 
-  <div class="page-header">
-    <h1><a href="/">{{site.name}}</a></h1>
-
-  </div>
+  {% unless layout.skip_page_header %}
+    <div class="page-header">
+      <h1><a href="/">{{page.title || site.name}}</a></h1>
+    </div>
+  {% endunless %}
 
   <div class="row">
     <div class="col-lg-9 content">
@@ -14,15 +15,12 @@ layout: master
     </div>
 
     <div class="col-lg-3 sidebar">
-      <div class="sidebar-content">
-        <p class="me">
-          <img src="/images/me.jpg" class="img-circle img-responsive" />
-        </p>
-        <p>Hi there, I'm Diego Guerra. I write about code and... well, mostly about code.</p>
-        <p>You can look at <a href="http://github.com/dgsuarez">some of it on github</a> and
-          follow me on <a href="http://twitter.com/dg_suarez">twitter</a>.</p>
+      <div class="sidebar-content {% if layout.skip_page_header %}no-header{% endif %}">
+        {% include me.html %}
 
-        <p>Oh, and don't forget to <a href="/feed.xml">subscribe to this blog!</a></p>
+        {% include description.html %}
+
+        <p>Oh, and don't forget to <a href="/feed.xml">subscribe to my new articles!</a></p>
       </div>
     </div>
 
@@ -31,10 +29,11 @@ layout: master
   <footer>
     <div class="row">
       <div class="col-lg-12">
-        <p>Copyright &copy; Diego Guerra 2014</p>
+        <hr />
+        <p>Diego Guerra </p>
+        {% include contact.html %}
       </div>
     </div>
   </footer>
 
 </div>
-<!-- /.container -->
