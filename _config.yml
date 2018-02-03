@@ -1,6 +1,6 @@
 name: Diego Guerra
 markdown: redcarpet
-highlighter: rouge
+highlighter: pygments
 
 githubs:
   - name: Thermometer
