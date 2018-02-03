@@ -2,6 +2,10 @@ body {
   font-size: 18px;
 }
 
+pre.highlight {
+  background-color: #f5f5f5;
+}
+
 .main-description {
   font-size: 32px;
 }
@@ -19,7 +23,6 @@ p.me img {
   margin: auto;
 }
 
-
 .sidebar-content.no-header {
   margin-top: 65px;
 }
@@ -27,11 +30,6 @@ p.me img {
 p.contact {
   text-align: center;
 }
-
-footer p.contact {
-  text-align: left;
-}
-
 
 p.contact svg {
   max-width: 32px;
@@ -46,4 +44,7 @@ p.contact a:hover, p.contact a:focus {
   text-decoration: none;
 }
 
+footer p.contact {
+  text-align: left;
+}
 
